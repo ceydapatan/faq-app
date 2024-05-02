@@ -1,0 +1,70 @@
+
+
+<div *ngIf="currentPath == '/1' || currentPath == '/2'  || currentPath == '/3' || currentPath == '/4'">
+
+<h1 style="font-family: 'Poppins', sans-serif !important; font-size: 1.5em; " mat-dialog-title>Frage einer anderen Kategorie zuordnen</h1>
+<div mat-dialog-actions style="font-family: 'Poppins', sans-serif !important; margin-left:1.0em;">
+
+    <mat-form-field style="margin: 0; font-family: 'Poppins', sans-serif !important; font-size: 1em; ">
+        <mat-label style="font-family: 'Poppins', sans-serif !important; font-size: 0.9em; ">Kategorie</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Praktikum</option>
+          <option value="saab">Bachelorarbeit</option>
+          <option value="mercedes">Kursbelegung</option>
+          <option value="audi">Sonstiges</option>
+        </select>
+      </mat-form-field>
+    <button style="font-size:0.9em;" mat-raised-button mat-dialog-close>Abbrechen</button>
+    <button  (click)="editCategory()"mat-raised-button  mat-dialog-close style="background-color: #0078d6; color:white; font-size:0.9em;">Speichern</button>
+
+
+</div>
+</div>
+
+
+<div *ngIf="false">
+
+  <h1 style="font-family: 'Poppins', sans-serif !important; font-size: 1.5em; " mat-dialog-title>Möchtest du die Kategorie „Sonstiges“ wirklich anlegen?</h1>
+  <div mat-dialog-content>
+Du kannst sie danach unter Umständen nicht löschen.
+  </div>
+  <div mat-dialog-actions style="font-family: 'Poppins', sans-serif !important; margin-left:1.0em;">
+  
+  
+      <button mat-raised-button mat-dialog-close>Abbrechen</button>
+      <button mat-raised-button style="background-color: #0078d6; color:white;">Anlegen</button>
+  
+  
+  </div>
+  </div>
+
+
+<div *ngIf="currentPath == '/delete-category' ">
+
+<h1 mat-dialog-title>Möchtest du die Kategorie „Sonstiges“ wirklich löschen?</h1>
+
+<div mat-dialog-actions style="margin-left:1.0em;">
+    <button mat-dialog-close mat-raised-button>Abbrechen</button>
+    <button mat-raised-button mat-dialog-close color="warn">Löschen</button>
+
+</div>
+
+</div>
+
+
+<div *ngIf="currentPath == '/admin'">
+
+  <h1 mat-dialog-title style="font-size:0.9em;">Beim Löschen einer Kategorie werden auch alle ihr zugeordneten Fragen gelöscht. Möchtest du die Kategorie „Praktikum“ wirklich löschen?</h1>
+  
+  <div mat-dialog-actions style="margin-left:1.0em;">
+      <button mat-dialog-close mat-raised-button>Abbrechen</button>
+      <button (click)="setInfo()"mat-raised-button mat-dialog-close color="warn">Löschen</button>
+  
+  </div>
+  
+  </div>
+
+<!--
+<button mat-raised-button style="background-color: #0078d6; color:white;">Login</button>
+<button mat-raised-button mat-dialog-close color="warn">Abbrechen</button>
+-->

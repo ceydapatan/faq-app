@@ -1,0 +1,8 @@
+<div class="centered-container">
+  <h3>Hier kannst du alle Fragen einsehen, die du angelegt hast. Klicke auf eine Frage, um zur Einzelansicht der Frage zu gelangen.</h3>
+    <mat-card  [routerLink]="['', project.id]"  *ngFor="let project of projects; index as i;">
+      <mat-card-content>{{project.name}}</mat-card-content>
+    </mat-card>
+  
+    
+  </div>

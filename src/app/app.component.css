@@ -1,0 +1,91 @@
+@import '~material-icons/iconfont/material-icons.css';
+
+body {
+  background-color: orange;
+
+}
+
+
+
+.sidenav-container {
+  height: 100%;
+}
+
+
+
+.start {
+  height: 100%;
+  width: 100%;
+}
+
+.sidenav {
+  width: 200px;
+
+  
+}
+
+
+
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
+}
+
+
+
+
+
+.app-btn{
+    color:white;
+    background: white;
+}
+
+.container{
+  display: flex;
+  justify-content: flex-end;
+  width:100% !important;
+}
+
+.text-above-link {
+  display: flex;
+  flex-direction: column;
+  width:100% !important;
+
+}
+
+.element{
+ margin-left: 85%;
+ margin-bottom: 5%;
+
+}
+
+.text-above-link span {
+
+  margin:0;
+  padding:0;
+   /* Adjust this value as needed to position the text */
+   
+  /* Additional styling for the text */
+}
+
+
+.anchor {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 4%;
+  /* And if you want the div to be full-width: */
+
+}
+
+
+.divider {
+  margin-top: 20%;
+  border-top: 1px solid #514f4f; /* Change color and thickness as needed */
+
+}

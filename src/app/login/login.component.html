@@ -1,0 +1,38 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="centered-container">
+<div *ngIf="!loggedIn">
+  <h3 class="centered">Anmeldung</h3>
+  <div>
+<mat-form-field style="font-family: 'Poppins', sans-serif !important;" >
+  <mat-label style="font-family: 'Poppins', sans-serif !important;">E-Mail-Adresse</mat-label>
+  <input style="font-family: 'Poppins', sans-serif !important;" matInput required [(ngModel)]="role">
+</mat-form-field>
+<mat-form-field style="font-family: 'Poppins', sans-serif !important;">
+  <mat-label style="font-family: 'Poppins', sans-serif !important;">Passwort</mat-label>
+  <input style="font-family: 'Poppins', sans-serif !important;"matInput required [type]="hide ? 'password' : 'text'">
+  <button style="font-family: 'Poppins', sans-serif !important;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </button>
+</mat-form-field>
+
+</div>
+
+
+
+
+<div class="error-message" >
+  <span class="close-btn" >×</span>
+  <p>Die E-Mail-Adresse oder das Kennwort ist falsch. Versuche es bitte noch einmal.</p>
+</div>
+
+
+
+<div class="parent">
+<button (click)="logIn()"class="child" mat-raised-button style="background-color: #0078d6; color:white; margin-right:auto; margin-left: auto; ">Anmelden</button>
+</div>
+
+
+</div>
+
+</div>

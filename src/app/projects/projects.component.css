@@ -1,0 +1,231 @@
+@import '~material-icons/iconfont/material-icons.css';
+
+a{
+    cursor:pointer;
+}
+a:hover {
+  color: #0078d6
+}
+
+
+.vl {
+  border-left: 1px solid rgb(206, 204, 204);
+  height: 43%;
+  margin-top: 3.3em;
+  margin-left: 2.6em;
+  position: absolute;
+
+}
+
+.vl-answer {
+  border-left: 1px solid rgb(206, 204, 204);  height: 14.8% ; 
+  /* height: 16.8%; */
+  /* height: 20%;  */
+  /*height: 35%;*/
+  margin-top: 0.2em;
+  margin-left: 3.8em;
+  position: absolute;
+
+}
+
+.vl-answer-two {
+  border-left: 1px solid rgb(206, 204, 204);  height: 38.5% ; 
+  /* height: 16.8%; */
+  /* height: 20%;  */
+  /*height: 35%;*/
+  margin-top: 0.2em;
+  margin-left: 3.8em;
+  position: absolute;
+
+
+}
+
+
+
+
+.vl-sub-answer {
+  border-left: 1px solid rgb(206, 204, 204);  height: 17.5%;
+  margin-top: 0em;
+  margin-left: 4.8em;
+  position: absolute;
+
+}
+::ng-deep .mat-mdc-snack-bar-container.blue-snackbar {
+  --mdc-snackbar-container-color: #2196f3;
+  --mat-mdc-snack-bar-button-color: #fff;
+  --mdc-snackbar-supporting-text-color: #fff;
+}
+
+::ng-deep .redNoMatch
+{
+  color:white;
+  background: #F44336 !important;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.search-icon {
+  padding: 0;
+  border: none;
+  background: none;
+  margin-left: 1em;
+  margin-top: 0.2em;
+  color: dimgray;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  transition: all 250ms ease-in-out;
+}
+
+
+mat-card-footer{
+  margin: 1.4 em;
+}
+
+
+.search-block {
+  width: 0%;
+  right: 0;
+  background: #fff;
+  width: 100%;
+}
+
+.search-control {
+  flex: 1;
+  font-size: 1rem;
+  border: 0;
+  outline: none;
+  padding-left: 10px;
+  max-width: 50%;
+}
+
+footer {
+  margin-left: 30%;
+  margin-top: 1.4em;
+
+
+}
+
+.add-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+mat-card{
+    margin-top: 1.4em;
+    max-width: 75%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-block {
+  max-width: 75%;
+  margin-top: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1.4em;
+}
+
+.comment-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3.4em;
+}
+
+.reply-icon{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+.reply-container{
+  text-align: right;
+}
+
+.filter-icon {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.4em;
+  
+
+  
+ 
+}
+
+.question-button{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+@media only screen and (min-width: 600px) {
+  .question-button{
+
+    
+  }
+}
+
+.anchor {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 2%;
+  
+  
+  
+  /* And if you want the div to be full-width: */
+
+}
+
+.centered-container{
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+max-width: 9em;
+}
+
+
+
+
+
+mat-form-field{
+  margin-right: auto;
+  margin-left: auto;
+  width: 75%;
+}
+
+
+.chip {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #e0e0e0;
+  border-radius: 16px;
+  font-size: 14px;
+  color: #333;
+  margin-right: 8px;
+}
+
+.chip .close {
+  cursor: pointer;
+  margin-left: 8px;
+  font-weight: bold;
+}

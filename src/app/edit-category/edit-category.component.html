@@ -1,0 +1,31 @@
+
+<h3 (click)="showMessage()" style="margin-left: auto; margin-right: auto;">Kategorie bearbeiten</h3>
+
+<div style="margin-left: auto; margin-right: auto; width: 80%;">
+
+<div style=" margin-top: 8%;  margin-bottom: 2%;">1. Wähle die Kategorie aus, die du bearbeiten  möchtest.</div>
+
+<mat-form-field style="margin: 0; font-family: 'Poppins', sans-serif !important; font-size: 1em; ">
+    <mat-label style="font-family: 'Poppins', sans-serif !important; font-size: 0.8em; ">Kategorie</mat-label>
+    <select matNativeControl required>
+        <option value="empty"></option>
+      <option value="volvo">Plaktikum</option>
+      <option value="saab">Bachelorarbeit</option>
+      <option value="mercedes">Kursbelegung</option>
+      <option value="audi">Sonstiges</option>
+    </select>
+  </mat-form-field>
+
+  <div style="margin-top: 8%;  margin-bottom: 2%;">2. Gebe einen neuen Namen für die Kategorie ein.</div>
+
+  <mat-form-field style="font-family: 'Poppins', sans-serif !important; " >
+    <mat-label style=" font-size: 0.8em;  font-family: 'Poppins', sans-serif !important; ">Name der Kategorie</mat-label>
+    <input style="font-size: 0.8em;"   matInput>
+  </mat-form-field>
+
+  
+
+
+</div>
+
+<button mat-raised-button style=" margin-left: auto; margin-right: auto; margin-top: 8%;  background-color: #0078d6; color:white;">Speichern</button>

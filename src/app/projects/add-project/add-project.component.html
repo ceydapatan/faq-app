@@ -1,0 +1,36 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<h3 style="margin-right:auto; margin-left: auto;">Neue Frage anlegen</h3>
+<mat-form-field style="font-family: 'Poppins', sans-serif !important; font-size: 1.1em; ">
+  <mat-label style="font-family: 'Poppins', sans-serif !important; font-size: 0.9em; ">Kurzfassung der Frage</mat-label>
+  <input style="" matInput>
+</mat-form-field>
+<mat-form-field style="width: 75%; font-family: 'Poppins', sans-serif !important; font-size: 1.1em;">
+  <mat-label style="font-family: 'Poppins', sans-serif !important; font-size: 0.9em; ">Beschreibung der Frage</mat-label>
+  <textarea matInput></textarea>
+</mat-form-field>
+<mat-form-field style="font-family: 'Poppins', sans-serif !important; font-size: 1.1em; ">
+  <mat-label style="font-family: 'Poppins', sans-serif !important; font-size: 0.9em; ">Kategorie</mat-label>
+  <select matNativeControl required>
+    <option value="volvo">Praktikum</option>
+    <option value="saab">Bachelorarbeit</option>
+    <option value="mercedes">Kursbelegung</option>
+    <option value="audi">Sonstiges</option>
+  </select>
+</mat-form-field>
+
+<div class="toggle-anonym">
+<mat-slide-toggle color="primary" style="margin-bottom: 1.4em;  ">Anonym anlegen</mat-slide-toggle>
+</div>
+
+
+
+
+
+
+<button [routerLink]="['/success']" mat-raised-button style="background-color: #0078d6; color:white; margin-right:auto; margin-left: auto; ">Frage anlegen</button>
+<!---
+<div style="width: 75%; margin-left: auto; margin-right: auto;">
+<mat-icon [routerLink]="['/']" style="cursor:pointer; color:#0078d6; margin-top:0.6em;">arrow_back_ios</mat-icon>
+</div>
+-->

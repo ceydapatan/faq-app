@@ -1,0 +1,217 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div *ngIf="false">
+  <h3 style="margin-right:auto; margin-left: auto;">Login</h3>
+<mat-form-field >
+  <mat-label>Matrikel-Nr</mat-label>
+  <input matInput required [(ngModel)]="role">
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Enter your password</mat-label>
+  <input matInput [type]="hide ? 'password' : 'text'">
+  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </button>
+</mat-form-field>
+
+
+
+
+
+
+
+<button (click)="logIn()" mat-raised-button style="background-color: #0078d6; color:white; margin-right:auto; margin-left: auto; ">Login</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="selectedId == 0">
+  <mat-toolbar  class="search-block mat-elevation-z4">
+    <mat-toolbar-row style="font-size: 0.8em;">
+      <button class="search-icon">
+        <i class="material-icons">search</i>
+      </button>
+      <input style="font-size: 0.8em; font-family: 'Poppins', sans-serif !important;" (keyup)="onKey($event)" class="search-control" type="text" placeholder="Suche..">
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+<div class="filter-icon" style="">
+  <button  style=""   mat-button [matMenuTriggerFor]="menu"><mat-icon>filter_list</mat-icon></button>
+
+  <mat-menu #menu="matMenu"  >
+    <button (click)="filter(category)" *ngFor="let category of categories" mat-menu-item>{{category.name}}</button>
+
+  </mat-menu>
+
+  <div class="chip" *ngIf="filterCategory != ''">
+   {{filterCategory}}
+    <span (click)="removeFilter()" class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+  </div>
+
+
+
+</div>
+
+
+<!-- <footer>
+  <button style="background: #0078d6; color: white;"class="add-button"[routerLink]="['add']" mat-mini-fab aria-label="Example icon button with a menu icon">
+    <mat-icon>add</mat-icon>
+  </button>
+</footer> -->
+
+<div *ngIf="!searchActivated" >
+  <mat-card  [routerLink]="['', project.id]" (click)="selectOne(project.id)" *ngFor="let project of projects; index as i;">
+    <mat-card-content>{{project.name}}</mat-card-content>
+  </mat-card>
+
+  
+</div>
+
+<div *ngIf="searchActivated" >
+  <mat-card [routerLink]="['', project.id]" (click)="selectOne(project.id)"*ngFor="let project of filteredProjects; index as i;">
+    <mat-card-content>{{project.name}}</mat-card-content>
+  </mat-card>
+  <div class="centered-container" *ngIf="filteredProjects.length==0">
+
+    <div >
+      <ng-lottie style="max-width:9em;"   [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+    </div>
+    <p >Leider konnten bei der Suche keine Treffer erzielt werden.</p>
+
+  </div>
+</div>
+
+<div class="question-button">
+<button  (click)="openPopup()"class="right-icon float-right app-btn anchor" mat-raised-button style=" margin-bottom: 7%; background-color: #0078d6; color:white;">
+
+  neue Frage anlegen
+</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+   <!--
+<div class="vl"></div>
+   -->
+<div *ngIf="this.selectedId > 0">
+  <h3 style="text-align: center; width: 75%; margin-left: auto; margin-right: auto;">Frage: {{projects[selectedId-2].name}}</h3>
+  <mat-card style="max-width: 75%;">
+    <mat-card-content style="display: flex; align-items: center;">
+      {{projects[selectedId-2].name}}
+  <!--
+      <span (click)="openPopup()"style="cursor:pointer; margin-left: auto;">
+        <mat-icon style="transform: scale(0.8); ">delete</mat-icon>
+      </span>
+-->
+    </mat-card-content>
+    <mat-card-footer style="margin-left: 1em; margin-top: 1.4em; margin-bottom: 1.4em;">
+      <span *ngIf="!editedCategory">Kategorie: Kursbelegung</span>
+      <span *ngIf="editedCategory">Kategorie: Praktikum</span>
+      <span *ngIf="role == 'dozentin'" (click)="openPopup()" style="cursor:pointer"><mat-icon style="transform: scale(0.8);">edit</mat-icon></span>
+    </mat-card-footer>
+    <mat-card-footer style="color: grey; margin-left: 0.4em; margin-bottom: 0.4em;">
+      Datum: 21.11.23
+    </mat-card-footer>
+  </mat-card>
+
+  <div (click)="activateCommentSection(true)" class="reply-icon">
+ <div style="font-style: italic;"  class="reply-container">
+  <mat-icon style="transform: scale(0.8); font-style: italic;">reply</mat-icon>Antworten</div>
+  </div>
+
+<div *ngIf="true">
+  <div [ngClass]="{'vl-answer': !commented, 'vl-answer-two': commented, 'third': false}"></div>
+  <mat-card style="max-width: 71.5%; margin-left: 16%;" >
+    <mat-card-content style="  display: flex; align-items: center;">  
+      Hier: www.test.de 
+ 
+      <!-- <mat-icon style="transform: scale(0.8); margin-right: 2%;">block</mat-icon>
+
+      Diese Antwort wurde gelöscht. -->
+ 
+      <!--
+      <span (click)="openPopup()"style="cursor:pointer; margin-left: auto;">
+        <mat-icon style="transform: scale(0.8);  margin-top: 0; padding-top: 0;">delete</mat-icon>
+      </span>
+    -->
+
+    </mat-card-content>
+    
+    <mat-card-footer style=" margin-left:1em; margin-top: 1.4em; margin-bottom: 1.4em;">Verfasserin: Nadiye, Bahar</mat-card-footer>
+    <mat-card-footer style="color: grey; margin-left: 0.4em; margin-bottom: 0.4em;">Datum: 21.11.23</mat-card-footer>
+  
+  </mat-card>
+
+  <div (click)="activateCommentSection(true)"class="reply-icon">
+    <div style="font-style: italic;"    class="reply-container"><mat-icon style="transform: scale(0.8); font-style: italic;">reply</mat-icon>Antworten</div>
+     </div>
+
+ <div *ngIf="commented">
+     <div  class="vl-sub-answer"></div>
+     <mat-card style="max-width: 67.5%; margin-left: 19.5%;" >
+      <mat-card-content style="display: flex; align-items: center;">
+        Das ist der alte Antrag. Hier, der neue: wwww.test.de
+        
+        <span (click)="openPopup()"style="cursor:pointer; margin-left: auto;">
+          <mat-icon style="transform: scale(0.8)">delete</mat-icon>
+        </span>
+        
+      </mat-card-content>
+      <mat-card-footer style=" margin-left:1em; margin-top: 1.4em; margin-bottom: 1.4em;">Verfasserin: Chrissie, Avah</mat-card-footer>
+      <mat-card-footer style="color: grey; margin-left: 0.4em; margin-bottom: 0.4em;">Datum: 21.11.23</mat-card-footer>
+    </mat-card>
+  
+  </div>
+
+<div *ngIf="replyButtonActivated && loggedIn" class="comment-box" >
+  <mat-form-field style="width: 75%; font-family: 'Poppins', sans-serif !important; ">
+    <mat-label style="font-family: 'Poppins', sans-serif !important; font-size: 0.8em;">Verfasse eine Antwort ..</mat-label>
+    <textarea style="font-size: 0.8em;"matInput></textarea>
+  </mat-form-field>
+<span style="display: inline-block;">
+  <button (click)="activateCommentSection(false)"mat-raised-button style="background-color: #0078d6; color:white;">Absenden</button>
+</span>
+</div>
+
+<div *ngIf="replyButtonActivated && !loggedIn" class="comment-box" >
+ 
+<span style="display: inline-block;">
+  Du musst dich erst anmelden, um eine Antwort verfassen zu können.
+</span>
+</div>
+<!--
+<div class="reply-icon">
+<mat-icon [routerLink]="['/']" style="cursor:pointer; color:#0078d6; margin-top:1.5em; ">arrow_back_ios</mat-icon>
+</div>
+-->
+</div>
+
+

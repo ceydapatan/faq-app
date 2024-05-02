@@ -1,0 +1,29 @@
+
+
+@media only screen and (min-width: 600px) {
+    .centered-container{
+        position: absolute;
+      top: 28%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 75%;
+    }
+  }
+
+
+
+  @media only screen and (max-width: 600px) {
+    .centered-container{
+        position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 75%;
+    }
+  }
+
+
+mat-card{
+  margin-top: 1.4em;
+cursor:pointer;
+}

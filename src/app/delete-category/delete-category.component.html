@@ -1,0 +1,22 @@
+
+<h3 (click)="showMessage()"  style="margin-left: auto; margin-right: auto;">Kategorie löschen</h3>
+
+<div style="margin-left: auto; margin-right: auto; width: 80%;">
+
+<div style=" margin-top: 4%;  margin-bottom: 2%;">Wähle die Kategorie aus, die du löschen  möchtest.  </div>
+<div style="color: gray;  font-size: 0.9em;  font-style: italic;  margin-bottom: 7%;">Du kannst nur die Kategorien auswählen und löschen, denen noch keine Fragen zugeordnet sind. </div>
+
+<mat-form-field style="margin: 0; font-family: 'Poppins', sans-serif !important; font-size: 1em; ">
+    <mat-label style="font-family: 'Poppins', sans-serif !important; font-size: 0.9em; ">Kategorie</mat-label>
+    <select matNativeControl required>
+        <option value="empty"></option>
+      <option value="volvo">Praktikum</option>
+      <option value="saab">Bachelorarbeit</option>
+      <option value="mercedes">Kursbelegung</option>
+      <option value="audi">Sonstiges</option>
+    </select>
+  </mat-form-field>
+
+</div>
+
+<button (click)="openPopup()" color="warn" mat-raised-button style=" margin-left: auto; margin-right: auto; margin-top: 2%; color:white;">Löschen</button>

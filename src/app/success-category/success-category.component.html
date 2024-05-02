@@ -1,0 +1,12 @@
+<mat-card style="margin-top:1.4em; width: 75%; margin-left: auto; margin-right: auto;">
+    <div class="success-message">
+      <div style="max-width: 14em; margin: auto;">
+        <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+      </div>
+      <h3>Die Kategorie wurde erfolgreich hinzugefügt.</h3>
+  
+  
+      <a style="color:black;" [routerLink]="['/']">Zurück zu allen Fragen</a>
+    </div>
+  </mat-card>
+  
